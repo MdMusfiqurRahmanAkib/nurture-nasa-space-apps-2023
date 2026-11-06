@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load the datasets
-land_data = pd.read_csv('land_data.csv')
-crop_suitability_data = pd.read_csv('crop_suitability_data.csv')
+land_data = pd.read_csv('data/land_data.csv')
+crop_suitability_data = pd.read_csv('data/crop_suitability_data.csv')
 
 # Check if merged_data is empty
 if land_data.empty or crop_suitability_data.empty:

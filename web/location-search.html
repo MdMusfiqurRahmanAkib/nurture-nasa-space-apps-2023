@@ -92,9 +92,9 @@
                     map: map,
                 });
                 
-                // Redirect to info.html with selected location
+                // Redirect to place-dashboard.html with selected location
                 const selectedLocation = 'Selected Location'; // You can use reverse geocoding for a more specific place name
-                window.location.href = `info.html?place=${encodeURIComponent(selectedLocation)}`;
+                window.location.href = `place-dashboard.html?place=${encodeURIComponent(selectedLocation)}`;
             });
         }
 
@@ -109,8 +109,8 @@
                         map: map,
                     });
                     
-                    // Redirect to info.html with selected place
-                    window.location.href = `info.html?place=${encodeURIComponent(address)}`;
+                    // Redirect to place-dashboard.html with selected place
+                    window.location.href = `place-dashboard.html?place=${encodeURIComponent(address)}`;
                 } else {
                     alert("Geocode was not successful for the following reason: " + status);
                 }

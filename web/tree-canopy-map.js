@@ -7,7 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Load your CSV data (adjust the path to your CSV file)
-d3.csv('new.csv').then(data => {
+d3.csv('../data/map_points.csv').then(data => {
     // Create a GeoJSON FeatureCollection to store area features
     const geoJsonFeatures = [];
 

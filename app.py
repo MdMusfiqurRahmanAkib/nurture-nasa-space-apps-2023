@@ -4,8 +4,8 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # Load the datasets
-land_data = pd.read_csv('land_data.csv')
-crop_suitability_data = pd.read_csv('crop_suitability_data.csv')
+land_data = pd.read_csv('data/land_data.csv')
+crop_suitability_data = pd.read_csv('data/crop_suitability_data.csv')
 
 # Define a function to encode soil type
 def encode_soil_type(soil_type):
@@ -23,7 +23,7 @@ land_data['Soil_Type'] = land_data['Soil_Type'].apply(encode_soil_type)
 
 @app.route('/')
 def index():
-    return render_template('index2.html')
+    return render_template('predictor.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -57,9 +57,9 @@ def predict():
     suggested_crops = suggest_crop(user_land_characteristics)
 
     if suggested_crops:
-        return render_template('result.html', suggested_crops=suggested_crops)
+        return render_template('predictor.html', suggested_crops=suggested_crops)
     else:
-        return render_template('result.html', message="No suitable crops found.")
+        return render_template('predictor.html', message="No suitable crops found.")
 
 if __name__ == '__main__':
     app.run(debug=True)
